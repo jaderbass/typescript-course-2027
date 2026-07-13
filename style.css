@@ -1,0 +1,493 @@
+:root {
+  color-scheme: light;
+
+  /* ========================================================================
+     Corporate Identity
+     ======================================================================== */
+
+  --ci-color-primary: rgb(250, 135, 4);
+  --ci-color-primary-transparent: rgba(250, 135, 4, 0.568);
+  --ci-color-secondary: #0d58b4;
+
+  --ci-background: #ffffff;
+  --ci-background-overlay: rgba(198, 198, 198, 0.75);
+  --ci-background-header: #f7f0e5;
+  --ci-background-header-dark: #262a2e;
+
+  --ci-text-dark: #333333;
+  --ci-text-light: #fefefe;
+
+  --ci-border-color: #cccccc;
+
+  --ci-navigation-background: #21292f;
+  --ci-navigation-text: #cfcccc;
+  --ci-navigation-hover: #fefefe;
+
+  --ci-success: #2e7d32;
+  --ci-warning: #9a5700;
+  --ci-danger: #c62828;
+  --ci-info: var(--ci-color-secondary);
+
+  /* ========================================================================
+     Typografie
+     ======================================================================== */
+
+  --ci-font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --ci-font-family-code: Consolas, "Courier New", monospace;
+  --ci-font-size: 1rem;
+  --ci-line-height: 1.5;
+
+  /* ========================================================================
+     Layout und Abstände
+     ======================================================================== */
+
+  --ci-content-width: 75rem;
+
+  --ci-space-xs: 0.25rem;
+  --ci-space-sm: 0.5rem;
+  --ci-space-md: 1rem;
+  --ci-space-lg: 2rem;
+  --ci-space-xl: 3rem;
+
+  /* ========================================================================
+     Rahmen, Schatten und Animationen
+     ======================================================================== */
+
+  --ci-radius-sm: 0.25rem;
+  --ci-radius-md: 0.5rem;
+  --ci-radius-lg: 0.75rem;
+
+  --ci-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+  --ci-shadow-md: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.12);
+
+  --ci-transition-fast: 0.2s ease;
+  --ci-transition-normal: 0.3s ease;
+
+  /* ========================================================================
+     Semantische Design-Tokens
+     ======================================================================== */
+
+  --color-page-background: #f5f5f5;
+  --color-surface: var(--ci-background);
+  --color-surface-muted: var(--ci-background-header);
+
+  --color-text: var(--ci-text-dark);
+  --color-text-muted: #626262;
+  --color-text-inverse: var(--ci-text-light);
+
+  --color-border: var(--ci-border-color);
+  --color-accent: var(--ci-color-primary);
+  --color-link: var(--ci-color-secondary);
+  --color-link-hover: #083e80;
+  --color-focus: var(--ci-color-secondary);
+
+  --color-button-background: var(--ci-color-primary);
+  --color-button-text: var(--ci-text-dark);
+  --color-button-hover-background: var(--ci-color-secondary);
+  --color-button-hover-text: var(--ci-text-light);
+
+  --color-code-background: #eeeeee;
+  --color-code-text: var(--ci-text-dark);
+}
+
+/* ========================================================================== 
+   Grundlayout
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--color-text);
+  background: var(--color-page-background);
+  font-family: var(--ci-font-family);
+  font-size: var(--ci-font-size);
+  line-height: var(--ci-line-height);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+p,
+ul,
+ol {
+  max-width: 75ch;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+  transition:
+    color var(--ci-transition-fast),
+    background-color var(--ci-transition-fast);
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 0.2rem solid var(--color-focus);
+  outline-offset: 0.2rem;
+}
+
+code {
+  padding: 0.1em 0.35em;
+  border-radius: var(--ci-radius-sm);
+  color: var(--color-code-text);
+  background: var(--color-code-background);
+  font-family: var(--ci-font-family-code);
+}
+
+.container {
+  width: min(var(--ci-content-width), calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+/* ========================================================================== 
+   Kopfbereich und Breadcrumb
+   ========================================================================== */
+
+.site-header {
+  padding-block: 2.5rem;
+  border-top: 0.4rem solid var(--color-accent);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  background: var(--color-surface-muted);
+}
+
+.site-header h1 {
+  margin-block: var(--ci-space-sm);
+}
+
+.site-header p {
+  margin-block: 0;
+  color: var(--color-text-muted);
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  max-width: none;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.breadcrumb a {
+  font-weight: 600;
+}
+
+/* ========================================================================== 
+   Übersichtsseiten und Karten
+   ========================================================================== */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: 1.25rem;
+  padding-block: var(--ci-space-lg);
+}
+
+.card,
+.content-box {
+  border: 1px solid var(--color-border);
+  border-radius: var(--ci-radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--ci-shadow-sm);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem;
+  border-top: 0.3rem solid var(--color-accent);
+  transition:
+    transform var(--ci-transition-fast),
+    box-shadow var(--ci-transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-0.15rem);
+  box-shadow: var(--ci-shadow-md);
+}
+
+.card h2 {
+  margin-block: 0 var(--ci-space-sm);
+}
+
+.card > p {
+  margin-block: 0 var(--ci-space-md);
+  color: var(--color-text-muted);
+}
+
+.card .button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* ========================================================================== 
+   Schaltflächen und Navigation
+   ========================================================================== */
+
+.button {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--ci-radius-md);
+  color: var(--color-button-text);
+  background: var(--color-button-background);
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    color var(--ci-transition-fast),
+    background-color var(--ci-transition-fast),
+    transform var(--ci-transition-fast);
+}
+
+.button:hover,
+.button:focus-visible {
+  color: var(--color-button-hover-text);
+  background: var(--color-button-hover-background);
+}
+
+.button:hover {
+  transform: translateY(-0.1rem);
+}
+
+.back-link {
+  font-weight: 700;
+}
+
+.lesson-navigation {
+  padding-block: var(--ci-space-sm) var(--ci-space-md);
+}
+
+/* ========================================================================== 
+   Lernfortschritt und Status
+   ========================================================================== */
+
+.progress-list {
+  display: grid;
+  gap: 0.45rem;
+  margin-block: 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.progress-list li {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  gap: 0.35rem;
+}
+
+.lesson-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ci-space-sm);
+  font-size: 0.95rem;
+}
+
+.done {
+  color: var(--ci-success);
+}
+
+.current {
+  color: var(--ci-warning);
+}
+
+.open {
+  color: var(--color-text-muted);
+}
+
+/* ========================================================================== 
+   Lektionsseiten
+   ========================================================================== */
+
+.lesson-content {
+  display: grid;
+  gap: 1.25rem;
+  padding-block: var(--ci-space-lg);
+}
+
+.content-box {
+  padding: 1.4rem;
+}
+
+.content-box > :first-child {
+  margin-top: 0;
+}
+
+.content-box > :last-child {
+  margin-bottom: 0;
+}
+
+.lesson-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ci-space-md) var(--ci-space-lg);
+}
+
+.lesson-info p {
+  margin: 0;
+}
+
+/* ========================================================================== 
+   Fußbereich
+   ========================================================================== */
+
+.site-footer {
+  padding: 1.5rem 1rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--ci-navigation-text);
+  background: var(--ci-navigation-background);
+  text-align: center;
+}
+
+.site-footer a {
+  color: var(--ci-navigation-text);
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--ci-navigation-hover);
+}
+
+.site-footer p {
+  max-width: none;
+  margin: 0;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ci-space-md);
+  flex-wrap: wrap;
+}
+
+.footer-meta {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-meta span:not(:last-child)::after {
+  margin-left: 1rem;
+  content: "·";
+}
+
+/* ========================================================================== 
+   Responsive Anpassungen
+   ========================================================================== */
+
+@media (max-width: 40rem) {
+
+  .footer-content,
+  .footer-meta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-meta span::after {
+    display: none;
+  }
+  .site-header {
+    padding-block: 1.75rem;
+  }
+
+  .dashboard,
+  .lesson-content {
+    padding-block: 1.25rem;
+  }
+
+  .card,
+  .content-box {
+    padding: var(--ci-space-md);
+  }
+}
+
+/* ========================================================================== 
+   Reduzierte Bewegungen
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ========================================================================== 
+   Kursbeschreibung und Projektübersicht
+   ========================================================================== */
+
+.course-overview {
+  padding-block: var(--ci-space-lg);
+}
+
+.course-introduction {
+  margin-bottom: var(--ci-space-lg);
+}
+
+.course-introduction h2,
+.course-overview > section > h2 {
+  margin-top: 0;
+}
+
+.project-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  gap: 1.25rem;
+  margin-bottom: var(--ci-space-xl);
+}
+
+.project-card {
+  border-top: 0.3rem solid var(--color-accent);
+}
+
+.project-card h2 {
+  margin-block: var(--ci-space-xs) var(--ci-space-sm);
+}
+
+.project-label {
+  margin: 0;
+  color: var(--color-link);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

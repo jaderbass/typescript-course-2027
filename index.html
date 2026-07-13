@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TypeScript Grundlagen</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <p class="breadcrumb">Kursübersicht</p>
+      <h1>TypeScript Grundlagen</h1>
+      <p>Vom JavaScript zum typsicheren Code</p>
+    </div>
+  </header>
+
+  <main class="container course-overview">
+    <section class="course-introduction" aria-labelledby="course-description-title">
+      <h2 id="course-description-title">Über diesen Kurs</h2>
+      <p>In diesem Kurs lernen Sie die grundlegenden Sprachkonzepte von TypeScript kennen. Die Inhalte werden anhand eines durchgängigen Beispielprojekts erläutert und in einem eigenständigen Übungsprojekt praktisch angewendet.</p>
+    </section>
+
+    <section class="project-overview" aria-label="Projekte des Kurses">
+      <article class="content-box project-card">
+        <p class="project-label">Beispiele</p>
+        <h2>Beispielprojekt: GeoShop</h2>
+        <p>Die Beispiele begleiten den fiktiven Outdoor-Onlineshop GeoShop. Anhand von Produkten, Preisen, Bestellungen und Lagerbeständen lernen Sie die neuen TypeScript-Konzepte zunächst in fertigen und nachvollziehbaren Programmen kennen.</p>
+      </article>
+
+      <article class="content-box project-card">
+        <p class="project-label">Übungen</p>
+        <h2>Übungsprojekt: Stadtbibliothek Lindenfels</h2>
+        <p>In den Übungen entwickeln Sie schrittweise eine kleine Verwaltungssoftware für die Stadtbibliothek Lindenfels. Sie verwalten Bücher und Mitglieder, erfassen Ausleihen und stellen dafür geeignete Typen, Funktionen und Klassen bereit. Die Aufgaben bauen fachlich aufeinander auf, enthalten jedoch jeweils den vorbereiteten Code, den Sie für die Bearbeitung benötigen.</p>
+      </article>
+    </section>
+
+    <section aria-labelledby="chapters-title">
+      <h2 id="chapters-title">Kursinhalte</h2>
+
+      <div class="dashboard">
+        <article class="card">
+          <h3>01 Grundlagen</h3>
+          <p>Grundlegende Datentypen, Arrays und Objekte</p>
+
+          <ul class="progress-list">
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>String, Boolean, Number</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Arrays und Tuples</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Objects</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Any, Void, Null und Undefined</span>
+            </li>
+          </ul>
+
+          <a class="button" href="./01-basics/index.html">
+            Kapitel öffnen
+          </a>
+        </article>
+        <article class="card">
+          <h3>02 Eigene und kombinierte Typen</h3>
+          <p>Flexible Typen definieren, erweitern und kombinieren</p>
+
+          <ul class="progress-list">
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Union Types</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Type Aliases</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Interfaces</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Extending Interfaces</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Intersection Types</span>
+            </li>
+          </ul>
+
+          <a class="button" href="./02-types/index.html">
+            Kapitel öffnen
+          </a>
+        </article>
+        <article class="card">
+          <h3>03 Fortgeschrittene Typen</h3>
+          <p>Daten prüfen und wiederverwendbare Funktionen entwickeln</p>
+
+          <ul class="progress-list">
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Unknown und Type Guards</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Enums</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Generic Functions</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Generic Constraints</span>
+            </li>
+          </ul>
+
+          <a class="button" href="./03-advanced-types/index.html">
+            Kapitel öffnen
+          </a>
+        </article>
+        <article class="card">
+          <h3>04 Objektorientierte Programmierung</h3>
+          <p>Produkte und Bestellungen mit Klassen modellieren</p>
+
+          <ul class="progress-list">
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Property Modifiers</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Constructors</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Public, Protected und Private</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Getter und Setter</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Static</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Generic Classes</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Implements</span>
+            </li>
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Abstract Classes</span>
+            </li>
+          </ul>
+
+          <a class="button" href="./04-oop/index.html">
+            Kapitel öffnen
+          </a>
+        </article>
+        <article class="card">
+          <h3>05 Module</h3>
+          <p>Code auf mehrere Dateien verteilen und wiederverwenden</p>
+
+          <ul class="progress-list">
+            <li>
+              <span class="open" aria-hidden="true">
+                ○              </span>
+              <span>Import und Export</span>
+            </li>
+          </ul>
+
+          <a class="button" href="./05-modules/index.html">
+            Kapitel öffnen
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+<footer class="site-footer">
+  <div class="container footer-content">
+
+    <p class="footer-meta">
+      <span>
+        &copy; 2026        JAderBass web&#039;n&#039;more      </span>
+      <span>Autor: Jörg Aderhold</span>
+      <span>Version 1.0.0</span>
+    </p>
+  </div>
+</footer>
+</body>
+</html>
