@@ -1,5 +1,51 @@
 # TypeScript for Beginners
 
+## NPM testen
+
+Nach der Installation von NodeJS zunächst testen, ob NodeJS und NPM richtig installiert wurde.
+
+```bash
+npm -v
+```
+
+### Windows Execution Policy verhindert das Ausführen dieses Befehls
+
+Falls Windows das Ausführen des Befehls verhindert muss die Execution Policy geändert werden. Dazu in der PowerShell mit Admin-Rechten folgendes ausführen:
+
+```ps
+Get-ExecutionPolicy -List
+```
+
+Das führt i.d.R. zu folgender Ausgabe:
+
+```ps
+      Scope     ExecutionPolicy
+----- ---------------
+MachinePolicy   Undefined
+UserPolicy      Undefined
+Process         Undefined
+CurrentUser     Undefined
+LocalMachine    Undefined
+```
+
+Mindestens `CurrentUser` sollte auf `RemoteSigned` stehen. Dazu folgenden Befehl ausführen:
+
+```ps
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+Danach noch einmal mit `Get-ExecutionPolicy -List` prüfen. Die Ausgabe sollte dann so aussehen:
+
+```ps
+      Scope     ExecutionPolicy
+----- ---------------
+MachinePolicy   Undefined
+UserPolicy      Undefined
+Process         Undefined
+CurrentUser     RemoteSigned
+LocalMachine    Undefined
+```
+
 ## Install Software
 
 ```bash
