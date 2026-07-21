@@ -4,7 +4,7 @@
 
 Nach der Installation von NodeJS zunächst testen, ob NodeJS und NPM richtig installiert wurde.
 
-```bash
+```powershell
 npm -v
 ```
 
@@ -12,13 +12,13 @@ npm -v
 
 Falls Windows das Ausführen des Befehls verhindert muss die Execution Policy geändert werden. Dazu in der PowerShell mit Admin-Rechten folgendes ausführen:
 
-```ps
+```powershell
 Get-ExecutionPolicy -List
 ```
 
 Das führt i.d.R. zu folgender Ausgabe:
 
-```ps
+```powershell
       Scope     ExecutionPolicy
 ----- ---------------
 MachinePolicy   Undefined
@@ -30,13 +30,13 @@ LocalMachine    Undefined
 
 Mindestens `CurrentUser` sollte auf `RemoteSigned` stehen. Dazu folgenden Befehl ausführen:
 
-```ps
+```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 Danach noch einmal mit `Get-ExecutionPolicy -List` prüfen. Die Ausgabe sollte dann so aussehen:
 
-```ps
+```powershell
       Scope     ExecutionPolicy
 ----- ---------------
 MachinePolicy   Undefined
@@ -48,7 +48,7 @@ LocalMachine    Undefined
 
 ## Install Software
 
-```bash
+```powershell
 npm
 npm install -g typescript
 npm install -g lite-server
@@ -65,7 +65,7 @@ Documentation: https://code.visualstudio.com/docs/typescript/typescript-compilin
 - package.json
 - tsconfig.json
 
-```bash
+```powershell
 npm init
 npm install
 tsc -init
