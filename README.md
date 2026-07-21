@@ -91,7 +91,7 @@ Für den Kurs die minimalen Einstellungen für die `tsconfig.json` übernehmen:
 
 Wenn das Remote bereits Inhalte hat (README, CI, etc.):
 
-```bash
+```git
 git remote add origin git@github.com:USER/REPO.git
 git fetch origin
 git merge origin/main --allow-unrelated-histories
@@ -99,27 +99,27 @@ git merge origin/main --allow-unrelated-histories
 
 Danach:
 
-```bash
+```git
 git push -u origin main
 
 ```
 
 ## Remote-Repo wechseln
 
-```bash
+```git
 git remote -v
 git remote set-url origin git@github.com:NEU/REPO.git
 
 ```
 Prüfen:
 
-```bash
+```git
 git remote -v
 ```
 
 Falls das alte Repo komplett raus soll:
 
-```bash
+```git
 git remote remove origin
 git remote add origin git@github.com:NEU/REPO.git
 
@@ -127,6 +127,6 @@ git remote add origin git@github.com:NEU/REPO.git
 
 Danach puschen:
 
-```bash
+```git
 git push -u origin main
 ```
